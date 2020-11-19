@@ -1,0 +1,16 @@
+.vscode
+
+.venv
+
+*.pyc
+__pycache__
+
+/*/db.sqlite3
+
+/*/settings/__init__.py
+/*/settings/secrets.py
+
+/var/media
+/var/static
+
+/node_modules
