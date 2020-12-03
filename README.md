@@ -1,6 +1,6 @@
-# Website admin
+# Website backend
 
-A collection of administrative modules for various parts of the website.
+A collection of backend administrative modules for various parts of the website.
 
 ## Development setup
 
