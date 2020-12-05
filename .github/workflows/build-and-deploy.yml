@@ -21,7 +21,7 @@ jobs:
         id: envsetup
         uses: sledilnik/action-envsetup@master
         with:
-          namespacePrefix: sledilnik-website-backend
+          namespacePrefix: sledilnik
           releaseNamePrefix: website-backend
           deployUrlSuffix: admin.sledilnik.org
           stagingBranch: main
@@ -52,6 +52,6 @@ jobs:
         if: env.BUILD == 'true'
         uses: sledilnik/action-helm-deploy@master
         with:
-          chartName: sledilnik/website-backend
-          chartVersion: '0.2.0'
+          chartName: sledilnik/django
+          chartVersion: '0.1.1'
           kubeconfig: '${{ secrets.KUBECONFIG }}'        
