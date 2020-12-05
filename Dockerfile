@@ -5,6 +5,8 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /app
 ADD . /app/
 
+RUN mkdir -p /app/logs
+
 RUN pipenv lock -r > /tmp/requirements.txt && \
     pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/requirements.txt && \
     rm /tmp/requirements.txt && \
