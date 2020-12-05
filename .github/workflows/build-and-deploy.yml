@@ -4,7 +4,7 @@ on:
   push:
     # build master branch (staging)
     branches:
-      - master
+      - main
     # build tags thar have prefix `v`
     tags:
       - v*
