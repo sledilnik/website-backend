@@ -1,7 +1,7 @@
 ---
 ingressroute:
   enabled: true
-  certResolver: letsencrypttest
+  certResolver: letsencrypt
 
 configmap:
   data:

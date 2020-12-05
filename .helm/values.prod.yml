@@ -2,7 +2,7 @@
 ingressroute:
   enabled: true
   rule: Host(`backend.sledilnik.org`)
-  certResolver: letsencrypttest
+  certResolver: letsencrypt
 
 configmap:
   data:
