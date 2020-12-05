@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'sledilnik.posts',
 
     'tinymce',
+    'tastypie',
     'modeltranslation',
     'easy_thumbnails',
 

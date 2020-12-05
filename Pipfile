@@ -12,6 +12,7 @@ pillow = "*"
 easy-thumbnails = "*"
 django-modeltranslation = "*"
 django-tinymce = "*"
+django-tastypie = "*"
 
 [requires]
 python_version = "3.8"
