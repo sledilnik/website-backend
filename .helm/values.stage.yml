@@ -9,3 +9,9 @@ configmap:
     DJANGO_SETTINGS_MODULE: sledilnik.settings.kube
     SECRET_KEY: changeme
     ALLOWED_HOSTS: stage.backend.sledilnik.org
+
+media:
+  existingClaim: website-backend-media
+
+sqlite:
+  existingClaim: website-backend-sqlite

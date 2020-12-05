@@ -16,6 +16,9 @@ RUN pipenv lock -r > /tmp/requirements.txt && \
     rm -rf /var/lib/apt/lists/*
 
 RUN ln -s /app/sledilnik/settings/kube.py /app/sledilnik/settings/__init__.py
+RUN chown -R www-data:www-data .
+
+USER www-data
 
 RUN SECRET_KEY=nosecret python3 manage.py collectstatic --no-input
 
