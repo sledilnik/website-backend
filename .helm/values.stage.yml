@@ -8,3 +8,4 @@ configmap:
   data:
     DJANGO_SETTINGS_MODULE: sledilnik.settings.kube
     SECRET_KEY: changeme
+    ALLOWED_HOSTS: stage.backend.sledilnik.org
