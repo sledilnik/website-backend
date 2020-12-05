@@ -43,9 +43,9 @@ jobs:
         with:
           push: true
           context: .
-          file: ./Dockerfile-new
+          file: ./Dockerfile
           tags: |
-            ghcr.io/${{ github.repository_owner }}/website:${{ env.IMAGE_TAG}}
+            ghcr.io/${{ github.repository_owner }}/website-backend:${{ env.IMAGE_TAG}}
 
       - name: Deploy
         if: env.BUILD == 'true'
