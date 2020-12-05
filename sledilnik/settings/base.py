@@ -28,6 +28,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'sledilnik',
+    'sledilnik.posts',
+
+    'tinymce',
+    'modeltranslation',
+    'easy_thumbnails',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -100,7 +107,14 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'sl-si'
+gettext = lambda s: s
+
+LANGUAGE_CODE = 'sl'
+
+LANGUAGES = [
+    ('sl', gettext('Slovenian')),
+    ('en', gettext('English')),
+]
 
 TIME_ZONE = 'Europe/Ljubljana'
 
@@ -147,4 +161,25 @@ LOGGING = {
             'level': 'INFO',
         }
     }
+}
+
+
+# TinyMCE
+
+TINYMCE_UPLOAD_TO = "uploads/%Y/%m/%d/%H/%M/%S"
+
+TINYMCE_DEFAULT_CONFIG = {
+    "min_height": 300,
+    "menubar": False,
+    "branding": False,
+    "statusbar": False,
+    "toolbar_sticky": True,
+    "plugins": "lists, link, autolink, image, hr, table, codesample, paste, searchreplace, autoresize, media",
+    "toolbar": "undo redo | formatselect | bold italic subscript superscript | bullist numlist | link image hr table codesample media | searchreplace | removeformat",
+    "block_formats": "Paragraph=p; Header 1=h2; Header 2=h3",
+    "convert_urls": False,
+    "media_poster": False,
+    "media_alt_source": False,
+    "file_picker_types": "file, image",
+    "file_picker_callback": "tinyMceFilePicker('/tinymce/upload/')"
 }

@@ -8,8 +8,10 @@ flake8 = "*"
 
 [packages]
 django = "*"
-psycopg2-binary = "*"
 pillow = "*"
+easy-thumbnails = "*"
+django-modeltranslation = "*"
+django-tinymce = "*"
 
 [requires]
 python_version = "3.8"
