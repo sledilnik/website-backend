@@ -8,9 +8,6 @@ on:
     # build tags thar have prefix `v`
     tags:
       - v*
-    # build pull requests
-  pull_request:
-    types: [opened, synchronize, reopened, labeled]
 
 jobs:
   build:
