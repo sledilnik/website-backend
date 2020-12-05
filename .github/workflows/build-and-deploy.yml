@@ -53,5 +53,5 @@ jobs:
         uses: sledilnik/action-helm-deploy@master
         with:
           chartName: sledilnik/django
-          chartVersion: '0.1.3'
+          chartVersion: '0.1.4'
           kubeconfig: '${{ secrets.KUBECONFIG }}'        
