@@ -9,7 +9,7 @@ apt-get install -y nginx libzmq3-dev libevent-dev mariadb-common libmariadb3 bui
 
 pip3 --disable-pip-version-check --no-cache-dir install circus==0.16.1 uwsgi==2.0.18 pipenv
 
-pipenv lock -r /tmp/requirements.txt
+pipenv lock -r > /tmp/requirements.txt
 pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/requirements.txt
 rm /tmp/requirements.txt
 
