@@ -1,0 +1,4 @@
+---
+ingressroute:
+  rule: Host(`backend.sledilnik.org`)
+  certResolver: letsencrypttest
