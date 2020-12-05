@@ -48,6 +48,23 @@ jobs:
           tags: |
             ghcr.io/${{ github.repository_owner }}/website-backend:${{ env.IMAGE_TAG}}
 
+  deploy:
+    runs-on: ubuntu-20.04
+    needs: build
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      
+        # env setup sets up all env variables important for build and deploy
+      - name: Setup environment
+        id: envsetup
+        uses: sledilnik/action-envsetup@master
+        with:
+          namespacePrefix: sledilnik
+          releaseNamePrefix: website-backend
+          deployUrlSuffix: admin.sledilnik.org
+          stagingBranch: main
+
       - name: Deploy
         if: env.BUILD == 'true'
         uses: sledilnik/action-helm-deploy@master
