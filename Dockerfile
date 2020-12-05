@@ -1,15 +1,15 @@
-FROM python:3.8-slim
+FROM ghcr.io/sledilnik/website-backend-base:latest
 
 ENV PYTHONUNBUFFERED 1
 
-RUN mkdir /app
 WORKDIR /app
-
 ADD . /app/
-ADD ./docker/install-deps.sh /install-deps.sh
-ADD ./docker/docker-entrypoint.sh /docker-entrypoint.sh
 
-RUN /install-deps.sh && rm /install-deps.sh
-# RUN SKIP_DB=true python manage.py collectstatic --noinput
+RUN pipenv lock -r > /tmp/requirements.txt && \
+    pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/requirements.txt && \
+    rm /tmp/requirements.txt && \
+    apt-get purge -y build-essential python3-dev && \
+    apt-get autoremove -y && \
+    rm -rf /var/lib/apt/lists/*
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
+ENTRYPOINT ["circusd", "circus.ini"]
