@@ -6,7 +6,7 @@ ingressroute:
 
 configmap:
   data:
-    DJANGO_SETTINGS_MODULE: sledilnik.settings.kube
+    DJANGO_SETTINGS_MODULE: sledilnik.settings
     SECRET_KEY: changeme
     ALLOWED_HOSTS: stage.backend.sledilnik.org
 

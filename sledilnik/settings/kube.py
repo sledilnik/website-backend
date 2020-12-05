@@ -1,4 +1,6 @@
 import os
+from pathlib import Path
+
 from .base import *
 
 ## read all settings from environment configmap
@@ -9,6 +11,6 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / '../db/db.sqlite3',
+        'NAME': Path(BASE_DIR, '../var/db/db.sqlite3').resolve(),
     }
 }

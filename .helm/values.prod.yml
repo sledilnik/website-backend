@@ -6,5 +6,12 @@ ingressroute:
 
 configmap:
   data:
-    DJANGO_SETTINGS_MODULE: sledilnik.settings.kube
+    DJANGO_SETTINGS_MODULE: sledilnik.settings
     SECRET_KEY: changeme
+    ALLOWED_HOSTS: backend.sledilnik.org
+
+media:
+  existingClaim: website-backend-media
+
+sqlite:
+  existingClaim: website-backend-sqlite
