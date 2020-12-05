@@ -33,6 +33,7 @@ INSTALLED_APPS = [
 
     'tinymce',
     'tastypie',
+    'corsheaders',
     'modeltranslation',
     'easy_thumbnails',
 
@@ -47,6 +48,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -163,6 +165,15 @@ LOGGING = {
         }
     }
 }
+
+
+# CORS
+
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_METHODS = [
+    'GET',
+    'OPTIONS'
+]
 
 
 # TinyMCE
