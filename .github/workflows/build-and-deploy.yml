@@ -23,7 +23,8 @@ jobs:
         with:
           namespacePrefix: sledilnik-website-backend
           releaseNamePrefix: website-backend
-          deployUrlSuffix: 'admin.sledilnik.org'
+          deployUrlSuffix: admin.sledilnik.org
+          stagingBranch: main
 
       - name: Set up Docker Buildx
         if: env.BUILD == 'true'
