@@ -10,8 +10,7 @@ configmap:
     SECRET_KEY: changeme
     ALLOWED_HOSTS: backend.sledilnik.org
 
-media:
-  existingClaim: website-backend-media
+pesistence:
+  existingClaim: website-backend
 
-sqlite:
-  existingClaim: website-backend-sqlite
+existingSecret: website-backend

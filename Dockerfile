@@ -11,7 +11,7 @@ RUN pipenv lock -r > /tmp/requirements.txt && \
     pipenv --rm && \
     pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/requirements.txt && \
     rm /tmp/requirements.txt && \
-    apt-get purge -y build-essential python3-dev && \
+    apt-get purge -y build-essential python3-dev libpq-dev && \
     apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/*
 
