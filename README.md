@@ -20,7 +20,7 @@ Second, you need to link the development settings file and create a secrets file
 ```shell
 cd sledilnik/settings
 ln -s develop.py __init__.py
-cat "SECRET_KEY = 'secret-key'" > secrets.py
+echo "SECRET_KEY = 'secret-key'" > secrets.py
 cd -
 ```
 
