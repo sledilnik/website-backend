@@ -6,11 +6,11 @@ on:
 
 env:
   RELEASE_NAME: website-backend
-  DEPLOY_ENV: production
-  DEPLOY_URL: https://backend.sledilnik.org
   CHART_VALUES_FILE: .helm/values.prod.yml
   DEPLOY_NAMESPACE: sledilnik-prod
   IMAGE_TAG: ${{ github.event.release.tag_name }}
+  DEPLOY_ENV: production
+  DEPLOY_URL: https://backend.sledilnik.org
 
 jobs:
   build:
