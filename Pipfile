@@ -14,6 +14,7 @@ django-modeltranslation = "*"
 django-tinymce = "*"
 django-tastypie = "*"
 django-cors-headers = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.8"

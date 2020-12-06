@@ -41,3 +41,15 @@ Finally, run the server and visit the admin section at http://127.0.0.1:8000/adm
 ```shell
 ./manage.py runserver
 ```
+
+## Deployment
+
+Helm chart used is `sledilnik/django` located in https://github.com/sledilnik/helm-repo/
+
+### Manual deploy (for development)
+
+Change `../helm-repo/charts/django` with path to local checkout of helm chart, do modifications and try it out.
+
+```
+helm upgrade website-backend-stage ../helm-repo/charts/django --install --atomic --namespace sledilnik-stage  -f .helm/values.stage.yml --debug
+```

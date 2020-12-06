@@ -1,9 +1,16 @@
 ---
 ingressroute:
+  enabled: true
   rule: Host(`stage.backend.sledilnik.org`)
-  certResolver: letsencrypttest
+  certResolver: letsencrypt
 
 configmap:
   data:
-    DJANGO_SETTINGS_MODULE: sledilnik.settings.kube
+    DJANGO_SETTINGS_MODULE: sledilnik.settings
     SECRET_KEY: changeme
+    ALLOWED_HOSTS: stage.backend.sledilnik.org
+
+persistence:
+  existingClaim: website-backend
+
+existingSecret: website-backend
