@@ -1,7 +1,8 @@
 name: Build and deploy (production)
 
 on:
-  release: ['published']
+  release: 
+    types: [published]
 
 env:
   RELEASE_NAME: website-backend
