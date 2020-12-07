@@ -56,4 +56,4 @@ def upload(request):
         upload_to = datetime.datetime.now().strftime(settings.TINYMCE_UPLOAD_TO)
         upload_path = storage.save(Path(upload_to, file.name), file)
 
-        return JsonResponse({"location": storage.url(upload_path)})
+        return JsonResponse({"location": request.build_absolute_uri(storage.url(upload_path))})
