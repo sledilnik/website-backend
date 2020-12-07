@@ -188,7 +188,7 @@ TINYMCE_DEFAULT_CONFIG = {
     "toolbar_sticky": True,
     "plugins": "lists, link, autolink, image, hr, table, codesample, paste, searchreplace, autoresize, media",
     "toolbar": "undo redo | formatselect | bold italic subscript superscript | bullist numlist | link image hr table codesample media | searchreplace | removeformat",
-    "block_formats": "Paragraph=p; Header 1=h2; Header 2=h3",
+    "block_formats": "Naslov 1=h2; Naslov 2=h3; Odstavek=p",
     "convert_urls": False,
     "media_poster": False,
     "media_alt_source": False,
