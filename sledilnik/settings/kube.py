@@ -28,3 +28,5 @@ CACHES = {
         'TIMEOUT': 60,
     }
 }
+
+CACHE_MIDDLEWARE_SECONDS = 60
