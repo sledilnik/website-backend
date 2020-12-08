@@ -3,7 +3,7 @@ from pathlib import Path
 
 from .base import *
 
-## read all settings from environment configmap
+DEBUG = False
 
 ALLOWED_HOSTS = list(map(str.strip, os.getenv('ALLOWED_HOSTS', '*').split(',')))
 SECRET_KEY = os.getenv('SECRET_KEY')
@@ -18,5 +18,13 @@ DATABASES = {
         'PASSWORD': os.getenv('DATABASE_PASS'),
         'HOST': 'postgresql.default.svc.cluster.local',
         'PORT': '5432',
+    }
+}
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'default',
+        'TIMEOUT': 60,
     }
 }

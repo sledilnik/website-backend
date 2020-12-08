@@ -5,9 +5,9 @@ from sledilnik.tinymce import HTMLField
 
 
 class Post(models.Model):
-    published = models.BooleanField(_("Published"), default=False)
+    published = models.BooleanField(_("Published"), default=False, db_index=True)
 
-    created = models.DateTimeField(_("Created"), auto_now_add=True)
+    created = models.DateTimeField(_("Created"), db_index=True)
     updated = models.DateTimeField(_("Updated"), auto_now=True)
 
     author = models.CharField(_("Author"), max_length=100, null=True, blank=True)

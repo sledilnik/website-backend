@@ -9,6 +9,7 @@ from . import models
 class Post(TranslationAdmin):
     list_display = ["published", "title", "created", "updated"]
     list_display_links = ["title"]
+    date_hiearchy = "created"
     search_fields = ["author", "title", "blurb", "body"]
 
     class Media:
