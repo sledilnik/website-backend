@@ -71,10 +71,6 @@ msgstr "Slovensko"
 msgid "English"
 msgstr "Angleško"
 
-#: tinymce.py:54
-msgid "The uploaded file is not an image."
-msgstr "Datoteka ni slika"
-
 #: urls.py:10 urls.py:11
 msgid "Sledilnik Administration"
 msgstr "Sledilnik administracija"

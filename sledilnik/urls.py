@@ -6,9 +6,7 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.utils.translation import gettext_lazy as _
 
-import sledilnik.tinymce
 from sledilnik.posts.api import PostResource
-
 
 admin.site.enable_nav_sidebar = False
 admin.site.site_header = _("Sledilnik Administration")
@@ -21,9 +19,6 @@ api.register(PostResource())
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
-    path('tinymce/', include('tinymce.urls')),
-    path('tinymce/upload/', sledilnik.tinymce.upload),
 
     path('api/', include(api.urls)),
 ]

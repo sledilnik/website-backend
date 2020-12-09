@@ -31,7 +31,6 @@ INSTALLED_APPS = [
     'sledilnik',
     'sledilnik.posts',
 
-    'tinymce',
     'tastypie',
     'corsheaders',
     'modeltranslation',
@@ -176,24 +175,3 @@ CORS_ALLOW_METHODS = [
     'GET',
     'OPTIONS'
 ]
-
-
-# TinyMCE
-
-TINYMCE_UPLOAD_TO = "uploads/%Y/%m/%d/%H/%M/%S"
-
-TINYMCE_DEFAULT_CONFIG = {
-    "min_height": 300,
-    "menubar": False,
-    "branding": False,
-    "statusbar": False,
-    "toolbar_sticky": True,
-    "plugins": "lists, link, autolink, image, hr, table, codesample, paste, searchreplace, autoresize, media",
-    "toolbar": "undo redo | formatselect | bold italic subscript superscript | bullist numlist | link image hr table codesample media | searchreplace | removeformat",
-    "block_formats": "Naslov 1=h2; Naslov 2=h3; Odstavek=p",
-    "convert_urls": False,
-    "media_poster": False,
-    "media_alt_source": False,
-    "file_picker_types": "file, image",
-    "file_picker_callback": "tinyMceFilePicker('/tinymce/upload/')"
-}
