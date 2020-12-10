@@ -1,6 +1,7 @@
 import datetime
 
 from tastypie.resources import ModelResource
+from sorl.thumbnail import get_thumbnail
 
 from django.conf import settings
 from django.utils import translation
@@ -25,6 +26,6 @@ class PostResource(ModelResource):
         translation.activate(lang)
 
         if bundle.obj.image:
-            bundle.data["image"] = bundle.request.build_absolute_uri(bundle.obj.image.url)
+            bundle.data["image"] = bundle.request.build_absolute_uri(get_thumbnail(bundle.obj.image, "800x600").url)
 
         return bundle

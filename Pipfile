@@ -13,6 +13,7 @@ django-modeltranslation = "*"
 django-tastypie = "*"
 django-cors-headers = "*"
 psycopg2 = "*"
+sorl-thumbnail = "*"
 
 [requires]
 python_version = "3.8"
