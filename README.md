@@ -44,7 +44,7 @@ Finally, run the server and visit the admin section at http://127.0.0.1:8000/adm
 
 ## Deployment
 
-Helm chart used is `sledilnik/django` located in https://github.com/sledilnik/helm-repo/
+Helm chart used is `sledilnik/django` located in https://github.com/sledilnik/helm-repo/. See files in `.github.workflows`. Use `NOBUILD` keyword in commit message to skip build. Use `NODEPLOY` keyword in commit message to skip deploy
 
 ### Manual deploy (for development)
 
