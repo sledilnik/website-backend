@@ -21,12 +21,12 @@ DATABASES = {
     }
 }
 
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-        'LOCATION': 'default',
-        'TIMEOUT': 60,
-    }
-}
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+#         'LOCATION': 'default',
+#         'TIMEOUT': 60,
+#     }
+# }
 
-CACHE_MIDDLEWARE_SECONDS = 60
+# CACHE_MIDDLEWARE_SECONDS = 60
