@@ -1,5 +1,4 @@
 from tastypie.resources import ModelResource
-from easy_thumbnails.files import get_thumbnailer
 
 from django.conf import settings
 from django.utils import translation
@@ -21,6 +20,6 @@ class PostResource(ModelResource):
         translation.activate(lang)
 
         if bundle.obj.image:
-            bundle.data["image"] = bundle.request.build_absolute_uri(get_thumbnailer(bundle.obj.image).get_thumbnail({"size": (800, 600)}).url)
+            bundle.data["image"] = bundle.request.build_absolute_uri(bundle.obj.image.url)
 
         return bundle

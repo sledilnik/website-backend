@@ -9,7 +9,6 @@ flake8 = "*"
 [packages]
 django = "*"
 pillow = "*"
-easy-thumbnails = "*"
 django-modeltranslation = "*"
 django-tastypie = "*"
 django-cors-headers = "*"

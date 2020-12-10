@@ -35,7 +35,6 @@ INSTALLED_APPS = [
     'tastypie',
     'corsheaders',
     'modeltranslation',
-    'easy_thumbnails',
 
     'django.contrib.admin',
     'django.contrib.auth',
