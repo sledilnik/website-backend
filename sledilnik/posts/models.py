@@ -1,5 +1,8 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from django.conf import settings
+
+from sledilnik.easymde.models import MarkdownField
 
 
 class Post(models.Model):
@@ -11,9 +14,9 @@ class Post(models.Model):
     author = models.CharField(_("Author"), max_length=100, null=True, blank=True)
     image = models.ImageField(_("Image"), upload_to="posts/%Y/%m/%d/%H/%M/%S", null=True, blank=True)
     title = models.CharField(_("Title"), max_length=200)
-    blurb = models.TextField(_("Blurb"))
     link_to = models.URLField(_("Link to"), null=True, blank=True)
-    body = models.TextField(_("Body"), null=True, blank=True)
+    blurb = MarkdownField(_("Blurb"))
+    body = MarkdownField(_("Body"), null=True, blank=True)
 
     class Meta:
         verbose_name = _("Post")

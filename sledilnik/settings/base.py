@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'sledilnik',
     'sledilnik.posts',
+    'sledilnik.easymde',
 
     'tastypie',
     'corsheaders',

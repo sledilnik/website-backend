@@ -1,0 +1,12 @@
+<textarea name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}>{% if widget.value %}{{ widget.value }}{% endif %}</textarea>
+{{ options | json_script:options_id }}
+<script type="text/javascript">
+    var options_{{ options_id }} = JSON.parse(document.getElementById('{{ options_id }}').textContent);
+    new EasyMDE(Object.assign({
+        element: document.getElementById("{{ widget.attrs.id }}"),
+        status: false,
+        insertTexts: {
+            table: ["", "||||\n|-|-|-|\n||||\n||||"]
+        }
+    }, options_{{ options_id }}));
+</script>
