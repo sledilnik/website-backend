@@ -42,11 +42,18 @@ Finally, run the server and visit the admin section at http://127.0.0.1:8000/adm
 ./manage.py runserver
 ```
 
-## Deployment
+## Model graphs
+
+You can visualize the data models of this project. Please make sure you have install the development requirements by running `pipenv install --dev` and the run:
+
+    ./manage.py graph_models -g -o Model.pdf --no-inheritance <app-name>
+
+
+## Automatic deployment
 
 Helm chart used is `sledilnik/django` located in https://github.com/sledilnik/helm-repo/
 
-### Manual deploy (for development)
+### Manual deployment (for development)
 
 Change `../helm-repo/charts/django` with path to local checkout of helm chart, do modifications and try it out.
 

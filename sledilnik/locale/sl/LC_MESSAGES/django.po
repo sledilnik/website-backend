@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-05 12:05+0100\n"
+"POT-Creation-Date: 2020-12-11 12:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,37 +19,181 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
 "%100==4 ? 2 : 3);\n"
 
+#: models/models.py:11
+msgid "Password"
+msgstr "Geslo"
+
+#: models/models.py:11
+msgid "Used to authenticate against the API. Hashed form."
+msgstr "Geslo za avtentikacijo pri pošiljanju podatkov. V hash obliki."
+
+#: models/models.py:12
+msgid "Active"
+msgstr "Aktiven"
+
+#: models/models.py:13 models/models.py:29 models/models.py:42
+msgid "Name"
+msgstr "Ime"
+
+#: models/models.py:14
+msgid "Contact name"
+msgstr "Kontaktna oseba"
+
+#: models/models.py:15
+msgid "Contact email"
+msgstr "Kontaktni email"
+
+#: models/models.py:16
+msgid "Home page"
+msgstr "Domača stran"
+
+#: models/models.py:17 models/models.py:30 models/models.py:43
+msgid "Description"
+msgstr "Opis"
+
+#: models/models.py:20 models/models.py:71
+msgid "Model"
+msgstr "Model"
+
+#: models/models.py:21
+msgid "Models"
+msgstr "Modeli"
+
+#: models/models.py:33
+msgid "Modelling scenario"
+msgstr "Modelski scenarij"
+
+#: models/models.py:34
+msgid "Modelling scenarios"
+msgstr "Modelski scenariji"
+
+#: models/models.py:46
+msgid "Prediction interval type"
+msgstr "Tip intervala napovedi"
+
+#: models/models.py:47
+msgid "Prediction interval types"
+msgstr "Tipi intervalov napovedi"
+
+#: models/models.py:55
+msgid "Width"
+msgstr "Širina"
+
+#: models/models.py:58
+msgid "Prediction interval width"
+msgstr "Širina intervala napovedi"
+
+#: models/models.py:59
+msgid "Prediction interval widths"
+msgstr "Širine intervalov napovedi"
+
+#: models/models.py:67 posts/models.py:10
+msgid "Created"
+msgstr "Ustvarjeno"
+
+#: models/models.py:68 posts/models.py:11
+msgid "Updated"
+msgstr "Osveženo"
+
+#: models/models.py:70 models/models.py:87
+msgid "Date"
+msgstr "Datum"
+
+#: models/models.py:72
+msgid "Scenario"
+msgstr "Scenarij"
+
+#: models/models.py:73
+msgid "Interval type"
+msgstr "Tip intervala"
+
+#: models/models.py:74
+msgid "Interval width"
+msgstr "Širina intervala"
+
+#: models/models.py:77 models/models.py:88
+msgid "Prediction"
+msgstr "Napoved"
+
+#: models/models.py:78
+msgid "Predictions"
+msgstr "Napovedi"
+
+#: models/models.py:90
+msgid "ICU"
+msgstr "ICU"
+
+#: models/models.py:91
+msgid "ICU lower bound"
+msgstr "ICU spodnja meja"
+
+#: models/models.py:92
+msgid "ICU upper bound"
+msgstr "ICU zgornja meja"
+
+#: models/models.py:94
+msgid "Hospitalized"
+msgstr "Hospitalizirani"
+
+#: models/models.py:95
+msgid "Hospitalized lower bound"
+msgstr "Hospitalizirani spodnja meja"
+
+#: models/models.py:96
+msgid "Hospitalized upper bound"
+msgstr "Hospitalizirani zgornja meja"
+
+#: models/models.py:98
+msgid "Deceased"
+msgstr "Umrli"
+
+#: models/models.py:99
+msgid "Deceased lower bound"
+msgstr "Umrli spodnja meja"
+
+#: models/models.py:100
+msgid "Deceased upper bound"
+msgstr "Umrli zgornja meja"
+
+#: models/models.py:102
+msgid "DeceasedToDate"
+msgstr "Umrli skupaj"
+
+#: models/models.py:103
+msgid "Deceased todate lower bound"
+msgstr "Umrli skupaj spodnja meja"
+
+#: models/models.py:104
+msgid "Deceased todate upper bound"
+msgstr "Umrli skupaj zgornja meja"
+
+#: models/models.py:107 models/models.py:108
+msgid "Prediction data"
+msgstr "Podatki napovedi"
+
 #: posts/models.py:8
 msgid "Published"
 msgstr "Objavljeno"
 
-#: posts/models.py:10
-msgid "Created"
-msgstr "Ustvarjeno"
-
-#: posts/models.py:11
-msgid "Updated"
-msgstr "Osveženo"
-
 #: posts/models.py:13
-msgid "Author"
-msgstr "Avtor"
-
-#: posts/models.py:14
-msgid "Image"
-msgstr "Slika"
-
-#: posts/models.py:15
 msgid "Title"
 msgstr "Naslov"
 
-#: posts/models.py:16
-msgid "Blurb"
-msgstr "Povzetek"
-
-#: posts/models.py:17
+#: posts/models.py:14
 msgid "Link to"
 msgstr "Povezava na"
+
+#: posts/models.py:15
+msgid "Image"
+msgstr "Slika"
+
+#: posts/models.py:16
+msgid "Author"
+msgstr "Avtor"
+
+#: posts/models.py:17
+msgid "Blurb"
+msgstr "Povzetek"
 
 #: posts/models.py:18
 msgid "Body"
@@ -63,18 +207,18 @@ msgstr "Objava"
 msgid "Posts"
 msgstr "Objave"
 
-#: settings/base.py:115
+#: settings/base.py:121
 msgid "Slovenian"
 msgstr "Slovensko"
 
-#: settings/base.py:116
+#: settings/base.py:122
 msgid "English"
 msgstr "Angleško"
 
-#: urls.py:10 urls.py:11
+#: urls.py:12 urls.py:13
 msgid "Sledilnik Administration"
 msgstr "Sledilnik administracija"
 
-#: urls.py:12
+#: urls.py:14
 msgid "Site administration"
 msgstr "Administracija strani"
