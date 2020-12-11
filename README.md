@@ -20,7 +20,7 @@ Second, you need to link the development settings file and create a secrets file
 ```shell
 cd sledilnik/settings
 ln -s develop.py __init__.py
-cat "SECRET_KEY = 'secret-key'" > secrets.py
+echo "SECRET_KEY = 'secret-key'" > secrets.py
 cd -
 ```
 
@@ -51,7 +51,7 @@ You can visualize the data models of this project. Please make sure you have ins
 
 ## Automatic deployment
 
-Helm chart used is `sledilnik/django` located in https://github.com/sledilnik/helm-repo/
+Helm chart used is `sledilnik/django` located in https://github.com/sledilnik/helm-repo/. See files in `.github.workflows`. Use `NOBUILD` keyword in commit message to skip build. Use `NODEPLOY` keyword in commit message to skip deploy
 
 ### Manual deployment (for development)
 
