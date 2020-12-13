@@ -4,12 +4,6 @@ ingressroute:
   rule: Host(`backend.sledilnik.org`)
   certResolver: letsencrypt
 
-configmap:
-  data:
-    DJANGO_SETTINGS_MODULE: sledilnik.settings
-    SECRET_KEY: changeme
-    ALLOWED_HOSTS: backend.sledilnik.org
-
 persistence:
   existingClaim: website-backend
 
