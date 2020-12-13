@@ -1,4 +1,4 @@
-import datetime
+from django.utils import timezone
 
 from tastypie.resources import ModelResource
 from tastypie.cache import SimpleCache
@@ -18,7 +18,7 @@ class PostResource(ModelResource):
         cache = SimpleCache(timeout=60)
 
     def get_object_list(self, request):
-        return super().get_object_list(request).filter(published=True, created__lte=datetime.datetime.now())
+        return super().get_object_list(request).filter(published=True, created__lte=timezone.now())
 
     def dehydrate(self, bundle):
         lang = bundle.request.GET.get("lang")
