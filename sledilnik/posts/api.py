@@ -15,7 +15,7 @@ class PostResource(ModelResource):
         resource_name = "posts"
         queryset = Post.objects.all()
         fields = ["id", "created", "updated", "author", "title", "image", "blurb", "link_to", "body"]
-        cache = SimpleCache(timeout=60)
+        cache = SimpleCache(timeout=60, public=True)
 
     def get_object_list(self, request):
         return super().get_object_list(request).filter(published=True, created__lte=timezone.now())
