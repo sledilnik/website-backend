@@ -35,6 +35,6 @@ class PostResource(ModelResource):
 
         if bundle.obj.image:
             bundle.data["image"] = bundle.request.build_absolute_uri(get_thumbnail(bundle.obj.image, "800x810").url)
-            bundle.data["image_thumb"] = bundle.request.build_absolute_uri(get_thumbnail(bundle.obj.image, "300x300").url)
+            bundle.data["image_thumb"] = bundle.request.build_absolute_uri(get_thumbnail(bundle.obj.image, "400x405").url)
 
         return bundle
