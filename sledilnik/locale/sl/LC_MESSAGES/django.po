@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-11 12:17+0100\n"
+"POT-Creation-Date: 2020-12-15 15:56+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,11 +87,11 @@ msgstr "Širina intervala napovedi"
 msgid "Prediction interval widths"
 msgstr "Širine intervalov napovedi"
 
-#: models/models.py:67 posts/models.py:10
+#: models/models.py:67 posts/models.py:8 restrictions/models.py:31
 msgid "Created"
 msgstr "Ustvarjeno"
 
-#: models/models.py:68 posts/models.py:11
+#: models/models.py:68 posts/models.py:9 restrictions/models.py:32
 msgid "Updated"
 msgstr "Osveženo"
 
@@ -171,41 +171,85 @@ msgstr "Umrli skupaj zgornja meja"
 msgid "Prediction data"
 msgstr "Podatki napovedi"
 
-#: posts/models.py:8
+#: posts/models.py:11 restrictions/models.py:33
 msgid "Published"
 msgstr "Objavljeno"
 
-#: posts/models.py:13
+#: posts/models.py:12
+msgid "Pinned"
+msgstr "Pripeto"
+
+#: posts/models.py:14 restrictions/models.py:20
 msgid "Title"
 msgstr "Naslov"
 
-#: posts/models.py:14
+#: posts/models.py:15
 msgid "Link to"
 msgstr "Povezava na"
 
-#: posts/models.py:15
+#: posts/models.py:16
 msgid "Image"
 msgstr "Slika"
 
-#: posts/models.py:16
+#: posts/models.py:17
 msgid "Author"
 msgstr "Avtor"
 
-#: posts/models.py:17
+#: posts/models.py:18
 msgid "Blurb"
 msgstr "Povzetek"
 
-#: posts/models.py:18
+#: posts/models.py:19
 msgid "Body"
 msgstr "Besedilo"
 
-#: posts/models.py:21
+#: posts/models.py:22
 msgid "Post"
 msgstr "Objava"
 
-#: posts/models.py:22
+#: posts/models.py:23
 msgid "Posts"
 msgstr "Objave"
+
+#: restrictions/models.py:21
+msgid "Rule"
+msgstr ""
+
+#: restrictions/models.py:22
+msgid "Regions"
+msgstr ""
+
+#: restrictions/models.py:23
+msgid "Rule exceptions"
+msgstr ""
+
+#: restrictions/models.py:24
+msgid "Extra rules"
+msgstr ""
+
+#: restrictions/models.py:25
+msgid "Valid since"
+msgstr ""
+
+#: restrictions/models.py:26
+msgid "Valid until"
+msgstr ""
+
+#: restrictions/models.py:27
+msgid "Validity comment"
+msgstr ""
+
+#: restrictions/models.py:28
+msgid "Comments"
+msgstr ""
+
+#: restrictions/models.py:29
+msgid "Legal link"
+msgstr ""
+
+#: restrictions/models.py:35
+msgid "Order"
+msgstr ""
 
 #: settings/base.py:121
 msgid "Slovenian"
@@ -215,10 +259,10 @@ msgstr "Slovensko"
 msgid "English"
 msgstr "Angleško"
 
-#: urls.py:12 urls.py:13
+#: urls.py:13 urls.py:14
 msgid "Sledilnik Administration"
 msgstr "Sledilnik administracija"
 
-#: urls.py:14
+#: urls.py:15
 msgid "Site administration"
 msgstr "Administracija strani"

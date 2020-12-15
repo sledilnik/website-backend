@@ -25,7 +25,8 @@ class PostForm(forms.ModelForm):
 @admin.register(models.Post)
 class Post(TranslationAdmin):
     form = PostForm
-    list_display = ["published", "title", "created", "updated"]
+    list_editable = ["published", "pinned"]
+    list_display = ["published", "pinned", "title", "created", "updated"]
     list_display_links = ["title"]
     date_hiearchy = "created"
     search_fields = ["author", "title", "blurb", "body"]
