@@ -5,10 +5,11 @@ from sledilnik.easymde.models import MarkdownField
 
 
 class Post(models.Model):
-    published = models.BooleanField(_("Published"), default=False, db_index=True)
-
     created = models.DateTimeField(_("Created"), db_index=True)
     updated = models.DateTimeField(_("Updated"), auto_now=True)
+
+    published = models.BooleanField(_("Published"), default=False, db_index=True)
+    on_homepage = models.BooleanField(_("On home page"), default=False, db_index=True)
 
     title = models.CharField(_("Title"), max_length=200)
     link_to = models.URLField(_("Link to"), null=True, blank=True)

@@ -18,7 +18,13 @@ class PostResource(ModelResource):
         cache = SimpleCache(timeout=60)
 
     def get_object_list(self, request):
-        return super().get_object_list(request).filter(published=True, created__lte=timezone.now())
+        kwargs = {
+            "published": True,
+            "created__lte": timezone.now()
+        }
+        if request.GET.get("page") == "home":
+            kwargs["on_homepage"] = True
+        return super().get_object_list(request).filter(**kwargs)
 
     def dehydrate(self, bundle):
         lang = bundle.request.GET.get("lang")
