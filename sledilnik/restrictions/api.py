@@ -22,7 +22,7 @@ class RestrictionResource(ModelResource):
         return super().get_object_list(request).filter(published=True).order_by("order")
 
     def alter_list_data_to_serialize(self, request, data):
-        data['meta']['last_update'] = super().get_object_list(request).aggregate(Max("updated")).get('updated__max')
+        data['meta']['last_update'] = self.get_object_list(request).aggregate(Max("updated")).get('updated__max')
         return data
 
     def dehydrate(self, bundle):
