@@ -6,6 +6,7 @@ from sorl.thumbnail import get_thumbnail
 
 from django.conf import settings
 from django.utils import translation
+from django.db.models import Q
 
 from .models import Post
 
@@ -18,7 +19,7 @@ class PostResource(ModelResource):
         cache = SimpleCache(timeout=60, public=True)
 
     def get_object_list(self, request):
-        return super().get_object_list(request).filter(published=True, created__lte=timezone.now())
+        return super().get_object_list(request).filter(Q(published=True) & (Q(published=True)) & (Q(valid_unitl__gte=timezone.now()) | Q(valid_until=None))).orderBy('-order')
 
     def dehydrate(self, bundle):
         lang = bundle.request.GET.get("lang")

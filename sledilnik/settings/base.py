@@ -31,12 +31,14 @@ INSTALLED_APPS = [
     'sledilnik',
     'sledilnik.posts',
     'sledilnik.models',
+    'sledilnik.restrictions',
     'sledilnik.easymde',
 
     'tastypie',
     'corsheaders',
     'sorl.thumbnail',
     'modeltranslation',
+    'adminsortable2',
 
     'django.contrib.admin',
     'django.contrib.auth',
