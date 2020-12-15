@@ -9,7 +9,7 @@ class Post(models.Model):
     updated = models.DateTimeField(_("Updated"), auto_now=True)
 
     published = models.BooleanField(_("Published"), default=False, db_index=True)
-    on_homepage = models.BooleanField(_("On home page"), default=False, db_index=True)
+    pinned = models.BooleanField(_("Pinned"), default=False, db_index=True)
 
     title = models.CharField(_("Title"), max_length=200)
     link_to = models.URLField(_("Link to"), null=True, blank=True)
@@ -21,7 +21,7 @@ class Post(models.Model):
     class Meta:
         verbose_name = _("Post")
         verbose_name_plural = _("Posts")
-        ordering = ["-created", "title"]
+        ordering = ["-pinned", "-created", "title"]
 
     def __str__(self):
         return self.title
