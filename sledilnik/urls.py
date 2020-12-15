@@ -7,6 +7,7 @@ from django.conf.urls.static import static
 from django.utils.translation import gettext_lazy as _
 
 from sledilnik.posts.api import PostResource
+from sledilnik.restrictions.api import RestrictionResource
 
 admin.site.enable_nav_sidebar = False
 admin.site.site_header = _("Sledilnik Administration")
@@ -15,6 +16,7 @@ admin.site.index_title = _("Site administration")
 
 api = Api(api_name='v1')
 api.register(PostResource())
+api.register(RestrictionResource())
 
 
 urlpatterns = [
