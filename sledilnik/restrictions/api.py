@@ -19,7 +19,7 @@ class RestrictionResource(ModelResource):
         cache = SimpleCache(timeout=60, public=True)
 
     def get_object_list(self, request):
-        return super().get_object_list(request).filter(published=True, created__lte=timezone.now()).order_by("order")
+        return super().get_object_list(request).filter(published=True).order_by("order")
 
     def alter_list_data_to_serialize(self, request, data):
         data['meta']['last_update'] = super().get_object_list(request).aggregate(Max("updated")).get('updated__max')
