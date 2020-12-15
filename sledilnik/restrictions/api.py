@@ -1,14 +1,12 @@
-from django.utils import timezone
-
 from tastypie.resources import ModelResource
 from tastypie.cache import SimpleCache
-from sorl.thumbnail import get_thumbnail
 
 from django.conf import settings
 from django.utils import translation
 
 from .models import Restriction
 from django.db.models import Max
+
 
 class RestrictionResource(ModelResource):
     class Meta:

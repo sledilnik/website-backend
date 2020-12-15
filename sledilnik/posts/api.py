@@ -6,7 +6,6 @@ from sorl.thumbnail import get_thumbnail
 
 from django.conf import settings
 from django.utils import translation
-from django.db.models import Q
 
 from .models import Post
 
