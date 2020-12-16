@@ -16,8 +16,8 @@ DATABASES = {
         'NAME': os.getenv('DATABASE_NAME'),
         'USER': os.getenv('DATABASE_USER'),
         'PASSWORD': os.getenv('DATABASE_PASS'),
-        'HOST': 'postgresql.default.svc.cluster.local',
-        'PORT': '5432',
+        'HOST': os.getenv('DATABASE_HOST', 'localhost'),
+        'PORT': int(os.getenv('DATABASE_PORT', '5432')),
     }
 }
 
