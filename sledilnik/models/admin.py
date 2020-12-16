@@ -5,10 +5,17 @@ from sledilnik.utils import TranslationAdmin
 from . import models
 
 
+@admin.register(models.Person)
+class PersonAdmin(admin.ModelAdmin):
+    list_display = ["name", "email"]
+    list_display_links = ["name"]
+
+
 @admin.register(models.Model)
 class ModelAdmin(TranslationAdmin):
-    list_display = ["active", "name", "id", "contact_name"]
+    list_display = ["active", "name", "id"]
     list_display_links = ["name"]
+    filter_horizontal = ["contacts"]
 
 
 @admin.register(models.Scenario)

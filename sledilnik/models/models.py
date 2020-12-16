@@ -6,15 +6,27 @@ from django.utils.translation import gettext_lazy as _
 from sledilnik.easymde.models import MarkdownField
 
 
+class Person(models.Model):
+    name = models.CharField(_("Name"), max_length=100)
+    email = models.EmailField(_("Email"), unique=True)
+
+    class Meta:
+        verbose_name = _("Person")
+        verbose_name_plural = _("People")
+        ordering = ["name"]
+
+    def __str__(self):
+        return self.name
+
+
 class Model(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     password = models.CharField(_("Password"), max_length=100, help_text=_("Used to authenticate against the API. Hashed form."))
     active = models.BooleanField(_("Active"), default=True)
     name = models.CharField(_("Name"), max_length=100, unique=True)
-    contact_name = models.CharField(_("Contact name"), max_length=100)
-    contact_email = models.EmailField(_("Contact email"))
     www = models.URLField(_("Home page"), null=True, blank=True)
     description = MarkdownField(_("Description"), null=True, blank=True)
+    contacts = models.ManyToManyField(Person, verbose_name=_("Contacts"))
 
     class Meta:
         verbose_name = _("Model")
