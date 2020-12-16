@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-15 15:56+0100\n"
+"POT-Creation-Date: 2020-12-16 18:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,159 +19,172 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
 "%100==4 ? 2 : 3);\n"
 
-#: models/models.py:11
-msgid "Password"
-msgstr "Geslo"
-
-#: models/models.py:11
-msgid "Used to authenticate against the API. Hashed form."
-msgstr "Geslo za avtentikacijo pri pošiljanju podatkov. V hash obliki."
-
-#: models/models.py:12
-msgid "Active"
-msgstr "Aktiven"
-
-#: models/models.py:13 models/models.py:29 models/models.py:42
+#: models/models.py:10 models/models.py:26 models/models.py:41
+#: models/models.py:55
 msgid "Name"
 msgstr "Ime"
 
+#: models/models.py:11
+msgid "Email"
+msgstr "Email"
+
 #: models/models.py:14
-msgid "Contact name"
-msgstr "Kontaktna oseba"
+msgid "Person"
+msgstr "Oseba"
 
 #: models/models.py:15
-msgid "Contact email"
-msgstr "Kontaktni email"
+msgid "People"
+msgstr "Osebe"
 
-#: models/models.py:16
+#: models/models.py:24
+msgid "Password"
+msgstr "Geslo"
+
+#: models/models.py:24
+msgid "Used to authenticate against the API. Hashed form."
+msgstr "Geslo za avtentikacijo pri pošiljanju podatkov. V hash obliki."
+
+#: models/models.py:25
+msgid "Active"
+msgstr "Aktiven"
+
+#: models/models.py:27
 msgid "Home page"
 msgstr "Domača stran"
 
-#: models/models.py:17 models/models.py:30 models/models.py:43
+#: models/models.py:28 models/models.py:43 models/models.py:57
 msgid "Description"
 msgstr "Opis"
 
-#: models/models.py:20 models/models.py:71
+#: models/models.py:29
+msgid "Contacts"
+msgstr "kontaktne osebe"
+
+#: models/models.py:32 models/models.py:85
 msgid "Model"
 msgstr "Model"
 
-#: models/models.py:21
+#: models/models.py:33
 msgid "Models"
 msgstr "Modeli"
 
-#: models/models.py:33
+#: models/models.py:42 models/models.py:56
+msgid "Slug"
+msgstr "Slug"
+
+#: models/models.py:46
 msgid "Modelling scenario"
 msgstr "Modelski scenarij"
 
-#: models/models.py:34
+#: models/models.py:47
 msgid "Modelling scenarios"
 msgstr "Modelski scenariji"
 
-#: models/models.py:46
+#: models/models.py:60
 msgid "Prediction interval type"
 msgstr "Tip intervala napovedi"
 
-#: models/models.py:47
+#: models/models.py:61
 msgid "Prediction interval types"
 msgstr "Tipi intervalov napovedi"
 
-#: models/models.py:55
+#: models/models.py:69
 msgid "Width"
 msgstr "Širina"
 
-#: models/models.py:58
+#: models/models.py:72
 msgid "Prediction interval width"
 msgstr "Širina intervala napovedi"
 
-#: models/models.py:59
+#: models/models.py:73
 msgid "Prediction interval widths"
 msgstr "Širine intervalov napovedi"
 
-#: models/models.py:67 posts/models.py:8 restrictions/models.py:31
+#: models/models.py:81 posts/models.py:8 restrictions/models.py:18
 msgid "Created"
 msgstr "Ustvarjeno"
 
-#: models/models.py:68 posts/models.py:9 restrictions/models.py:32
+#: models/models.py:82 posts/models.py:9 restrictions/models.py:19
 msgid "Updated"
 msgstr "Osveženo"
 
-#: models/models.py:70 models/models.py:87
+#: models/models.py:84 models/models.py:101
 msgid "Date"
 msgstr "Datum"
 
-#: models/models.py:72
+#: models/models.py:86
 msgid "Scenario"
 msgstr "Scenarij"
 
-#: models/models.py:73
+#: models/models.py:87
 msgid "Interval type"
 msgstr "Tip intervala"
 
-#: models/models.py:74
+#: models/models.py:88
 msgid "Interval width"
 msgstr "Širina intervala"
 
-#: models/models.py:77 models/models.py:88
+#: models/models.py:91 models/models.py:102
 msgid "Prediction"
 msgstr "Napoved"
 
-#: models/models.py:78
+#: models/models.py:92
 msgid "Predictions"
 msgstr "Napovedi"
 
-#: models/models.py:90
+#: models/models.py:104
 msgid "ICU"
 msgstr "ICU"
 
-#: models/models.py:91
+#: models/models.py:105
 msgid "ICU lower bound"
 msgstr "ICU spodnja meja"
 
-#: models/models.py:92
+#: models/models.py:106
 msgid "ICU upper bound"
 msgstr "ICU zgornja meja"
 
-#: models/models.py:94
+#: models/models.py:108
 msgid "Hospitalized"
 msgstr "Hospitalizirani"
 
-#: models/models.py:95
+#: models/models.py:109
 msgid "Hospitalized lower bound"
 msgstr "Hospitalizirani spodnja meja"
 
-#: models/models.py:96
+#: models/models.py:110
 msgid "Hospitalized upper bound"
 msgstr "Hospitalizirani zgornja meja"
 
-#: models/models.py:98
+#: models/models.py:112
 msgid "Deceased"
 msgstr "Umrli"
 
-#: models/models.py:99
+#: models/models.py:113
 msgid "Deceased lower bound"
 msgstr "Umrli spodnja meja"
 
-#: models/models.py:100
+#: models/models.py:114
 msgid "Deceased upper bound"
 msgstr "Umrli zgornja meja"
 
-#: models/models.py:102
+#: models/models.py:116
 msgid "DeceasedToDate"
 msgstr "Umrli skupaj"
 
-#: models/models.py:103
+#: models/models.py:117
 msgid "Deceased todate lower bound"
 msgstr "Umrli skupaj spodnja meja"
 
-#: models/models.py:104
+#: models/models.py:118
 msgid "Deceased todate upper bound"
 msgstr "Umrli skupaj zgornja meja"
 
-#: models/models.py:107 models/models.py:108
+#: models/models.py:121 models/models.py:122
 msgid "Prediction data"
 msgstr "Podatki napovedi"
 
-#: posts/models.py:11 restrictions/models.py:33
+#: posts/models.py:11 restrictions/models.py:21
 msgid "Published"
 msgstr "Objavljeno"
 
@@ -179,7 +192,7 @@ msgstr "Objavljeno"
 msgid "Pinned"
 msgstr "Pripeto"
 
-#: posts/models.py:14 restrictions/models.py:20
+#: posts/models.py:14 restrictions/models.py:23
 msgid "Title"
 msgstr "Naslov"
 
@@ -211,45 +224,45 @@ msgstr "Objava"
 msgid "Posts"
 msgstr "Objave"
 
-#: restrictions/models.py:21
-msgid "Rule"
-msgstr ""
-
-#: restrictions/models.py:22
-msgid "Regions"
-msgstr ""
-
-#: restrictions/models.py:23
-msgid "Rule exceptions"
-msgstr ""
+#: restrictions/models.py:16
+msgid "Order"
+msgstr "Urejeno"
 
 #: restrictions/models.py:24
-msgid "Extra rules"
-msgstr ""
+msgid "Rule"
+msgstr "Pravilo"
 
 #: restrictions/models.py:25
-msgid "Valid since"
-msgstr ""
+msgid "Regions"
+msgstr "Regije"
 
 #: restrictions/models.py:26
-msgid "Valid until"
-msgstr ""
+msgid "Rule exceptions"
+msgstr "Izjeme pravila"
 
 #: restrictions/models.py:27
-msgid "Validity comment"
-msgstr ""
+msgid "Extra rules"
+msgstr "Dodatna pravila"
 
 #: restrictions/models.py:28
-msgid "Comments"
-msgstr ""
+msgid "Valid since"
+msgstr "Velja od"
 
 #: restrictions/models.py:29
-msgid "Legal link"
-msgstr ""
+msgid "Valid until"
+msgstr "Velja do"
 
-#: restrictions/models.py:35
-msgid "Order"
-msgstr ""
+#: restrictions/models.py:30
+msgid "Validity comment"
+msgstr "Opombe k veljavnosti"
+
+#: restrictions/models.py:31
+msgid "Comments"
+msgstr "Opombe"
+
+#: restrictions/models.py:32
+msgid "Legal link"
+msgstr "Povezava na pravni dokument"
 
 #: settings/base.py:121
 msgid "Slovenian"

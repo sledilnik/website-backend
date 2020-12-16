@@ -39,6 +39,7 @@ class Model(models.Model):
 
 class Scenario(models.Model):
     name = models.CharField(_("Name"), max_length=100, unique=True)
+    slug = models.SlugField(_("Slug"), unique=True)
     description = MarkdownField(_("Description"), null=True, blank=True)
 
     class Meta:
@@ -52,6 +53,7 @@ class Scenario(models.Model):
 
 class PredictionIntervalType(models.Model):
     name = models.CharField(_("Name"), max_length=100, unique=True)
+    slug = models.SlugField(_("Slug"), unique=True)
     description = MarkdownField(_("Description"), null=True, blank=True)
 
     class Meta:
