@@ -1,22 +1,24 @@
 from django.contrib import admin
 
+from sledilnik.utils import TranslationAdmin
+
 from . import models
 
 
 @admin.register(models.Model)
-class ModelAdmin(admin.ModelAdmin):
+class ModelAdmin(TranslationAdmin):
     list_display = ["active", "name", "id", "contact_name"]
     list_display_links = ["name"]
 
 
 @admin.register(models.Scenario)
-class ScenarioAdmin(admin.ModelAdmin):
+class ScenarioAdmin(TranslationAdmin):
     list_display = ["name"]
     list_display_links = ["name"]
 
 
 @admin.register(models.PredictionIntervalType)
-class PredictionIntervalTypeAdmin(admin.ModelAdmin):
+class PredictionIntervalTypeAdmin(TranslationAdmin):
     list_display = ["name"]
     list_display_links = ["name"]
 
