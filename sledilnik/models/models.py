@@ -72,7 +72,7 @@ class PredictionIntervalWidth(models.Model):
         ordering = ["width"]
 
     def __str__(self):
-        return self.width
+        return str(self.width)
 
 
 class Prediction(models.Model):
