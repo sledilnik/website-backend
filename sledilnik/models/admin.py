@@ -32,17 +32,11 @@ class PredictionIntervalTypeAdmin(TranslationAdmin):
     prepopulated_fields = {"slug": ["name"]}
 
 
-@admin.register(models.PredictionIntervalWidth)
-class PredictionIntervalWidthAdmin(admin.ModelAdmin):
-    list_display = ["width"]
-    list_display_links = ["width"]
-
-
 @admin.register(models.Prediction)
 class PredictionAdmin(admin.ModelAdmin):
-    list_display = ["date", "model", "scenario", "interval_type", "interval_width"]
+    list_display = ["date", "model", "scenario", "interval_type"]
     list_display_links = ["date"]
-    list_filter = ["model", "scenario", "interval_type", "interval_width"]
+    list_filter = ["model", "scenario", "interval_type"]
     date_hierarchy = "date"
 
 

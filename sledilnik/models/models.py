@@ -65,18 +65,6 @@ class PredictionIntervalType(models.Model):
         return self.name
 
 
-class PredictionIntervalWidth(models.Model):
-    width = models.PositiveIntegerField(_("Width"), unique=True)
-
-    class Meta:
-        verbose_name = _("Prediction interval width")
-        verbose_name_plural = _("Prediction interval widths")
-        ordering = ["width"]
-
-    def __str__(self):
-        return str(self.width)
-
-
 class Prediction(models.Model):
     created = models.DateTimeField(_("Created"), auto_now_add=True)
     updated = models.DateTimeField(_("Updated"), auto_now=True)
@@ -85,7 +73,6 @@ class Prediction(models.Model):
     model = models.ForeignKey(Model, on_delete=models.PROTECT, verbose_name=_("Model"))
     scenario = models.ForeignKey(Scenario, on_delete=models.PROTECT, verbose_name=_("Scenario"))
     interval_type = models.ForeignKey(PredictionIntervalType, on_delete=models.PROTECT, verbose_name=_("Interval type"), null=True, blank=True)
-    interval_width = models.ForeignKey(PredictionIntervalWidth, on_delete=models.PROTECT, verbose_name=_("Interval width"), null=True, blank=True)
 
     class Meta:
         verbose_name = _("Prediction")
