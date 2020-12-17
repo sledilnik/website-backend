@@ -77,7 +77,7 @@ class Prediction(models.Model):
     class Meta:
         verbose_name = _("Prediction")
         verbose_name_plural = _("Predictions")
-        unique_together = [("date", "model")]
+        unique_together = [("date", "model", "scenario", "interval_kind")]
         ordering = ["-date", "model__name"]
 
     def __str__(self):
