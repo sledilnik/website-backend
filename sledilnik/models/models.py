@@ -51,14 +51,14 @@ class Scenario(models.Model):
         return self.name
 
 
-class PredictionIntervalType(models.Model):
+class PredictionIntervalKind(models.Model):
     name = models.CharField(_("Name"), max_length=100, unique=True)
     slug = models.SlugField(_("Slug"), unique=True)
     description = MarkdownField(_("Description"), null=True, blank=True)
 
     class Meta:
-        verbose_name = _("Prediction interval type")
-        verbose_name_plural = _("Prediction interval types")
+        verbose_name = _("Prediction interval kind")
+        verbose_name_plural = _("Prediction interval kinds")
         ordering = ["name"]
 
     def __str__(self):
@@ -72,7 +72,7 @@ class Prediction(models.Model):
     date = models.DateField(_("Date"))
     model = models.ForeignKey(Model, on_delete=models.PROTECT, verbose_name=_("Model"))
     scenario = models.ForeignKey(Scenario, on_delete=models.PROTECT, verbose_name=_("Scenario"))
-    interval_type = models.ForeignKey(PredictionIntervalType, on_delete=models.PROTECT, verbose_name=_("Interval type"), null=True, blank=True)
+    interval_kind = models.ForeignKey(PredictionIntervalKind, on_delete=models.PROTECT, verbose_name=_("Interval kind"), null=True, blank=True)
 
     class Meta:
         verbose_name = _("Prediction")

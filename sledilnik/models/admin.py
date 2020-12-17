@@ -25,8 +25,8 @@ class ScenarioAdmin(TranslationAdmin):
     prepopulated_fields = {"slug": ["name"]}
 
 
-@admin.register(models.PredictionIntervalType)
-class PredictionIntervalTypeAdmin(TranslationAdmin):
+@admin.register(models.PredictionIntervalKind)
+class PredictionIntervalKindAdmin(TranslationAdmin):
     list_display = ["name"]
     list_display_links = ["name"]
     prepopulated_fields = {"slug": ["name"]}
@@ -34,9 +34,9 @@ class PredictionIntervalTypeAdmin(TranslationAdmin):
 
 @admin.register(models.Prediction)
 class PredictionAdmin(admin.ModelAdmin):
-    list_display = ["date", "model", "scenario", "interval_type"]
+    list_display = ["date", "model", "scenario", "interval_kind"]
     list_display_links = ["date"]
-    list_filter = ["model", "scenario", "interval_type"]
+    list_filter = ["model", "scenario", "interval_kind"]
     date_hierarchy = "date"
 
 

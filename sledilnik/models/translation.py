@@ -12,6 +12,6 @@ class ScenarioTranslationOptions(TranslationOptions):
     fields = ["name", "description"]
 
 
-@register(models.PredictionIntervalType)
-class PredictionIntervalTypeTranslationOptions(TranslationOptions):
+@register(models.PredictionIntervalKind)
+class PredictionIntervalKindTranslationOptions(TranslationOptions):
     fields = ["name", "description"]
