@@ -1,1 +1,6 @@
 sledilnik/settings/__init__.py
+.github
+.helm
+.vscode
+__pycache__
+*.pyc

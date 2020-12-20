@@ -6,5 +6,6 @@ RUN mkdir /app
 WORKDIR /app
 
 ADD . /app/
-ADD ./docker/install-deps.sh /install-deps.sh
-RUN /install-deps.sh && rm /install-deps.sh
+
+# this installs runtimpe dependencies and clean build dependencies, to keep image small
+RUN /app/docker/setup.sh --install && /app/docker/setup.sh --cleanup

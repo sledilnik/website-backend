@@ -6,9 +6,6 @@ services:
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
-      args:
-        VARIANT: 3.8
-        INSTALL_NODE: "false"
 
     environment:
       DJANGO_SETTINGS_MODULE: sledilnik.settings.devcontainer
