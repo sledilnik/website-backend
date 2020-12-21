@@ -85,7 +85,7 @@ class Prediction(models.Model):
 
 
 class PredictionData(models.Model):
-    date = models.PositiveIntegerField(_("Date"))
+    date = models.DateField(_("Date"))
     prediction = models.ForeignKey(Prediction, on_delete=models.PROTECT, verbose_name=_("Prediction"))
 
     icu = models.PositiveIntegerField(_("ICU"))
