@@ -14,7 +14,8 @@ class PostResource(ModelResource):
     class Meta:
         resource_name = "posts"
         queryset = Post.objects.all()
-        fields = ["id", "created", "updated", "author", "title", "image", "blurb", "link_to", "body"]
+        fields = ["id", "created", "updated", "author", "title",
+                  "image", "image_caption", "blurb", "link_to", "body"]
         cache = SimpleCache(timeout=60, public=True)
 
     def get_object_list(self, request):
@@ -34,7 +35,9 @@ class PostResource(ModelResource):
         translation.activate(lang)
 
         if bundle.obj.image:
-            bundle.data["image"] = bundle.request.build_absolute_uri(get_thumbnail(bundle.obj.image, "800x810").url)
-            bundle.data["image_thumb"] = bundle.request.build_absolute_uri(get_thumbnail(bundle.obj.image, "400x405").url)
+            bundle.data["image"] = bundle.request.build_absolute_uri(
+                get_thumbnail(bundle.obj.image, "800x810").url)
+            bundle.data["image_thumb"] = bundle.request.build_absolute_uri(
+                get_thumbnail(bundle.obj.image, "400x405").url)
 
         return bundle
