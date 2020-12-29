@@ -24,7 +24,7 @@ class PostResource(ModelResource):
         }
         if request.GET.get("page") == "home":
             kwargs["on_homepage"] = True
-        return super().get_object_list(request).filter(**kwargs)
+        return super().get_object_list(request).filter(**kwargs).order_by('-created')
 
     def dehydrate(self, bundle):
         lang = bundle.request.GET.get("lang")
