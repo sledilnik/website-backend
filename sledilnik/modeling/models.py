@@ -1,12 +1,11 @@
-import uuid
-
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from sledilnik.utils import UUIDModel
 from sledilnik.easymde.models import MarkdownField
 
 
-class Person(models.Model):
+class Person(UUIDModel):
     name = models.CharField(_("Name"), max_length=100)
     email = models.EmailField(_("Email"), unique=True)
 
@@ -19,8 +18,7 @@ class Person(models.Model):
         return self.name
 
 
-class Model(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+class Model(UUIDModel):
     password = models.CharField(_("Password"), max_length=100, help_text=_("Used to authenticate against the API. Hashed form."))
     active = models.BooleanField(_("Active"), default=True)
     name = models.CharField(_("Name"), max_length=100, unique=True)
@@ -37,7 +35,7 @@ class Model(models.Model):
         return self.name
 
 
-class Scenario(models.Model):
+class Scenario(UUIDModel):
     name = models.CharField(_("Name"), max_length=100, unique=True)
     slug = models.SlugField(_("Slug"), unique=True)
     description = MarkdownField(_("Description"), null=True, blank=True)
@@ -51,7 +49,7 @@ class Scenario(models.Model):
         return self.name
 
 
-class PredictionIntervalKind(models.Model):
+class IntervalKind(UUIDModel):
     name = models.CharField(_("Name"), max_length=100, unique=True)
     slug = models.SlugField(_("Slug"), unique=True)
     description = MarkdownField(_("Description"), null=True, blank=True)
@@ -65,14 +63,14 @@ class PredictionIntervalKind(models.Model):
         return self.name
 
 
-class Prediction(models.Model):
+class Prediction(UUIDModel):
     created = models.DateTimeField(_("Created"), auto_now_add=True)
     updated = models.DateTimeField(_("Updated"), auto_now=True)
 
     date = models.DateField(_("Date"))
     model = models.ForeignKey(Model, on_delete=models.PROTECT, verbose_name=_("Model"))
     scenario = models.ForeignKey(Scenario, on_delete=models.PROTECT, verbose_name=_("Scenario"))
-    interval_kind = models.ForeignKey(PredictionIntervalKind, on_delete=models.PROTECT, verbose_name=_("Interval kind"), null=True, blank=True)
+    interval_kind = models.ForeignKey(IntervalKind, on_delete=models.PROTECT, verbose_name=_("Interval kind"), null=True, blank=True)
 
     class Meta:
         verbose_name = _("Prediction")
@@ -84,7 +82,7 @@ class Prediction(models.Model):
         return "{} @ {}".format(self.model.name, self.date)
 
 
-class PredictionData(models.Model):
+class PredictionData(UUIDModel):
     date = models.DateField(_("Date"))
     prediction = models.ForeignKey(Prediction, on_delete=models.PROTECT, verbose_name=_("Prediction"))
 

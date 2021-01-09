@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'sledilnik',
     'sledilnik.posts',
-    'sledilnik.models',
+    'sledilnik.modeling',
     'sledilnik.restrictions',
     'sledilnik.easymde',
 
