@@ -19,9 +19,9 @@ class Person(UUIDModel):
 
 
 class Model(UUIDModel):
-    password = models.CharField(_("Password"), max_length=100, help_text=_("Used to authenticate against the API. Hashed form."))
     active = models.BooleanField(_("Active"), default=True)
     name = models.CharField(_("Name"), max_length=100, unique=True)
+    password = models.CharField(_("Password"), max_length=100, help_text=_("Used to authenticate against the API. Hashed form."))
     www = models.URLField(_("Home page"), null=True, blank=True)
     description = MarkdownField(_("Description"), null=True, blank=True)
     contacts = models.ManyToManyField(Person, verbose_name=_("Contacts"))
@@ -84,15 +84,15 @@ class Prediction(UUIDModel):
 
 class PredictionData(UUIDModel):
     date = models.DateField(_("Date"))
-    prediction = models.ForeignKey(Prediction, on_delete=models.PROTECT, verbose_name=_("Prediction"))
-
-    icu = models.PositiveIntegerField(_("ICU"))
-    icuLowerBound = models.PositiveIntegerField(_("ICU lower bound"), null=True, blank=True)
-    icuUpperBound = models.PositiveIntegerField(_("ICU upper bound"), null=True, blank=True)
+    prediction = models.ForeignKey(Prediction, on_delete=models.CASCADE, verbose_name=_("Prediction"), related_name="data")
 
     hospitalized = models.PositiveIntegerField(_("Hospitalized"))
     hospitalizedLowerBound = models.PositiveIntegerField(_("Hospitalized lower bound"), null=True, blank=True)
     hospitalizedUpperBound = models.PositiveIntegerField(_("Hospitalized upper bound"), null=True, blank=True)
+
+    icu = models.PositiveIntegerField(_("ICU"))
+    icuLowerBound = models.PositiveIntegerField(_("ICU lower bound"), null=True, blank=True)
+    icuUpperBound = models.PositiveIntegerField(_("ICU upper bound"), null=True, blank=True)
 
     deceased = models.PositiveIntegerField(_("Deceased"))
     deceasedLowerBound = models.PositiveIntegerField(_("Deceased lower bound"), null=True, blank=True)
@@ -106,7 +106,7 @@ class PredictionData(UUIDModel):
         verbose_name = _("Prediction data")
         verbose_name_plural = _("Prediction data")
         unique_together = [("prediction", "date")]
-        ordering = ["-date", "prediction"]
+        ordering = ["date", "prediction"]
 
     def __str__(self):
         return "{} @ {}".format(self.prediction, self.date)

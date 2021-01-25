@@ -23,7 +23,7 @@ api.register(RestrictionResource())
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('api/modeling/', include(sledilnik.modeling.urls)),
+    path('api/v1/modeling/', include(sledilnik.modeling.urls)),
     path('api/', include(api.urls)),
 ]
 
