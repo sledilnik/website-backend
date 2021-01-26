@@ -8,6 +8,7 @@ from django.utils.translation import gettext_lazy as _
 
 from sledilnik.posts.api import PostResource
 from sledilnik.restrictions.api import RestrictionResource
+import sledilnik.modeling.urls
 
 admin.site.enable_nav_sidebar = False
 admin.site.site_header = _("Sledilnik Administration")
@@ -22,6 +23,7 @@ api.register(RestrictionResource())
 urlpatterns = [
     path('admin/', admin.site.urls),
 
+    path('api/v1/modeling/', include(sledilnik.modeling.urls)),
     path('api/', include(api.urls)),
 ]
 

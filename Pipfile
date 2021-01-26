@@ -17,6 +17,8 @@ django-cors-headers = "*"
 psycopg2 = "*"
 sorl-thumbnail = "*"
 django-admin-sortable2 = "*"
+pandas = "*"
+pandas-schema = "*"
 
 [requires]
 python_version = "3.8"

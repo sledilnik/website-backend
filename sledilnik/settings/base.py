@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'sledilnik',
     'sledilnik.posts',
-    'sledilnik.models',
+    'sledilnik.modeling',
     'sledilnik.restrictions',
     'sledilnik.easymde',
 
@@ -115,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 gettext = lambda s: s
 
-LANGUAGE_CODE = 'sl'
+LANGUAGE_CODE = 'en'
 
 LANGUAGES = [
     ('sl', gettext('Slovenian')),

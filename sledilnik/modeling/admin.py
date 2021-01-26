@@ -22,14 +22,12 @@ class ModelAdmin(TranslationAdmin):
 class ScenarioAdmin(TranslationAdmin):
     list_display = ["name"]
     list_display_links = ["name"]
-    prepopulated_fields = {"slug": ["name"]}
 
 
-@admin.register(models.PredictionIntervalKind)
-class PredictionIntervalKindAdmin(TranslationAdmin):
+@admin.register(models.IntervalKind)
+class IntervalKindAdmin(TranslationAdmin):
     list_display = ["name"]
     list_display_links = ["name"]
-    prepopulated_fields = {"slug": ["name"]}
 
 
 @admin.register(models.Prediction)

@@ -1,12 +1,11 @@
-import uuid
-
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from sledilnik.utils import UUIDModel
 from sledilnik.easymde.models import MarkdownField
 
 
-class Person(models.Model):
+class Person(UUIDModel):
     name = models.CharField(_("Name"), max_length=100)
     email = models.EmailField(_("Email"), unique=True)
 
@@ -19,11 +18,10 @@ class Person(models.Model):
         return self.name
 
 
-class Model(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    password = models.CharField(_("Password"), max_length=100, help_text=_("Used to authenticate against the API. Hashed form."))
+class Model(UUIDModel):
     active = models.BooleanField(_("Active"), default=True)
     name = models.CharField(_("Name"), max_length=100, unique=True)
+    password = models.CharField(_("Password"), max_length=100, help_text=_("Used to authenticate against the API. Hashed form."))
     www = models.URLField(_("Home page"), null=True, blank=True)
     description = MarkdownField(_("Description"), null=True, blank=True)
     contacts = models.ManyToManyField(Person, verbose_name=_("Contacts"))
@@ -37,7 +35,7 @@ class Model(models.Model):
         return self.name
 
 
-class Scenario(models.Model):
+class Scenario(UUIDModel):
     name = models.CharField(_("Name"), max_length=100, unique=True)
     slug = models.SlugField(_("Slug"), unique=True)
     description = MarkdownField(_("Description"), null=True, blank=True)
@@ -51,7 +49,7 @@ class Scenario(models.Model):
         return self.name
 
 
-class PredictionIntervalKind(models.Model):
+class IntervalKind(UUIDModel):
     name = models.CharField(_("Name"), max_length=100, unique=True)
     slug = models.SlugField(_("Slug"), unique=True)
     description = MarkdownField(_("Description"), null=True, blank=True)
@@ -65,14 +63,14 @@ class PredictionIntervalKind(models.Model):
         return self.name
 
 
-class Prediction(models.Model):
+class Prediction(UUIDModel):
     created = models.DateTimeField(_("Created"), auto_now_add=True)
     updated = models.DateTimeField(_("Updated"), auto_now=True)
 
     date = models.DateField(_("Date"))
     model = models.ForeignKey(Model, on_delete=models.PROTECT, verbose_name=_("Model"))
     scenario = models.ForeignKey(Scenario, on_delete=models.PROTECT, verbose_name=_("Scenario"))
-    interval_kind = models.ForeignKey(PredictionIntervalKind, on_delete=models.PROTECT, verbose_name=_("Interval kind"), null=True, blank=True)
+    interval_kind = models.ForeignKey(IntervalKind, on_delete=models.PROTECT, verbose_name=_("Interval kind"), null=True, blank=True)
 
     class Meta:
         verbose_name = _("Prediction")
@@ -84,17 +82,17 @@ class Prediction(models.Model):
         return "{} @ {}".format(self.model.name, self.date)
 
 
-class PredictionData(models.Model):
+class PredictionData(UUIDModel):
     date = models.DateField(_("Date"))
-    prediction = models.ForeignKey(Prediction, on_delete=models.PROTECT, verbose_name=_("Prediction"))
-
-    icu = models.PositiveIntegerField(_("ICU"))
-    icuLowerBound = models.PositiveIntegerField(_("ICU lower bound"), null=True, blank=True)
-    icuUpperBound = models.PositiveIntegerField(_("ICU upper bound"), null=True, blank=True)
+    prediction = models.ForeignKey(Prediction, on_delete=models.CASCADE, verbose_name=_("Prediction"), related_name="data")
 
     hospitalized = models.PositiveIntegerField(_("Hospitalized"))
     hospitalizedLowerBound = models.PositiveIntegerField(_("Hospitalized lower bound"), null=True, blank=True)
     hospitalizedUpperBound = models.PositiveIntegerField(_("Hospitalized upper bound"), null=True, blank=True)
+
+    icu = models.PositiveIntegerField(_("ICU"))
+    icuLowerBound = models.PositiveIntegerField(_("ICU lower bound"), null=True, blank=True)
+    icuUpperBound = models.PositiveIntegerField(_("ICU upper bound"), null=True, blank=True)
 
     deceased = models.PositiveIntegerField(_("Deceased"))
     deceasedLowerBound = models.PositiveIntegerField(_("Deceased lower bound"), null=True, blank=True)
@@ -108,7 +106,7 @@ class PredictionData(models.Model):
         verbose_name = _("Prediction data")
         verbose_name_plural = _("Prediction data")
         unique_together = [("prediction", "date")]
-        ordering = ["-date", "prediction"]
+        ordering = ["date", "prediction"]
 
     def __str__(self):
         return "{} @ {}".format(self.prediction, self.date)

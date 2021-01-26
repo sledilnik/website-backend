@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-17 21:29+0100\n"
+"POT-Creation-Date: 2021-01-09 14:02+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,152 +19,152 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
 "%100==4 ? 2 : 3);\n"
 
-#: models/models.py:10 models/models.py:26 models/models.py:41
-#: models/models.py:55
+#: modeling/models.py:9 modeling/models.py:24 modeling/models.py:39
+#: modeling/models.py:53
 msgid "Name"
 msgstr "Ime"
 
-#: models/models.py:11
+#: modeling/models.py:10
 msgid "Email"
 msgstr "Email"
 
-#: models/models.py:14
+#: modeling/models.py:13
 msgid "Person"
 msgstr "Oseba"
 
-#: models/models.py:15
+#: modeling/models.py:14
 msgid "People"
 msgstr "Osebe"
 
-#: models/models.py:24
+#: modeling/models.py:22
 msgid "Password"
 msgstr "Geslo"
 
-#: models/models.py:24
+#: modeling/models.py:22
 msgid "Used to authenticate against the API. Hashed form."
 msgstr "Geslo za avtentikacijo pri pošiljanju podatkov. V hash obliki."
 
-#: models/models.py:25
+#: modeling/models.py:23
 msgid "Active"
 msgstr "Aktiven"
 
-#: models/models.py:27
+#: modeling/models.py:25
 msgid "Home page"
 msgstr "Domača stran"
 
-#: models/models.py:28 models/models.py:43 models/models.py:57
+#: modeling/models.py:26 modeling/models.py:41 modeling/models.py:55
 msgid "Description"
 msgstr "Opis"
 
-#: models/models.py:29
+#: modeling/models.py:27
 msgid "Contacts"
 msgstr "kontaktne osebe"
 
-#: models/models.py:32 models/models.py:73
+#: modeling/models.py:30 modeling/models.py:71
 msgid "Model"
 msgstr "Model"
 
-#: models/models.py:33
+#: modeling/models.py:31
 msgid "Models"
 msgstr "Modeli"
 
-#: models/models.py:42 models/models.py:56
+#: modeling/models.py:40 modeling/models.py:54
 msgid "Slug"
 msgstr "Slug"
 
-#: models/models.py:46
+#: modeling/models.py:44
 msgid "Modelling scenario"
 msgstr "Modelski scenarij"
 
-#: models/models.py:47
+#: modeling/models.py:45
 msgid "Modelling scenarios"
 msgstr "Modelski scenariji"
 
-#: models/models.py:60
+#: modeling/models.py:58
 msgid "Prediction interval kind"
 msgstr "Vrsta intervala napovedi"
 
-#: models/models.py:61
+#: modeling/models.py:59
 msgid "Prediction interval kinds"
 msgstr "Vrste intervalov napovedi"
 
-#: models/models.py:69 posts/models.py:8 restrictions/models.py:18
+#: modeling/models.py:67 posts/models.py:8 restrictions/models.py:18
 msgid "Created"
 msgstr "Ustvarjeno"
 
-#: models/models.py:70 posts/models.py:9 restrictions/models.py:19
+#: modeling/models.py:68 posts/models.py:9 restrictions/models.py:19
 msgid "Updated"
 msgstr "Osveženo"
 
-#: models/models.py:72 models/models.py:88
+#: modeling/models.py:70 modeling/models.py:86
 msgid "Date"
 msgstr "Datum"
 
-#: models/models.py:74
+#: modeling/models.py:72
 msgid "Scenario"
 msgstr "Scenarij"
 
-#: models/models.py:75
+#: modeling/models.py:73
 msgid "Interval kind"
 msgstr "Vrsta intervala"
 
-#: models/models.py:78 models/models.py:89
+#: modeling/models.py:76 modeling/models.py:87
 msgid "Prediction"
 msgstr "Napoved"
 
-#: models/models.py:79
+#: modeling/models.py:77
 msgid "Predictions"
 msgstr "Napovedi"
 
-#: models/models.py:91
+#: modeling/models.py:89
 msgid "ICU"
 msgstr "ICU"
 
-#: models/models.py:92
+#: modeling/models.py:90
 msgid "ICU lower bound"
 msgstr "ICU spodnja meja"
 
-#: models/models.py:93
+#: modeling/models.py:91
 msgid "ICU upper bound"
 msgstr "ICU zgornja meja"
 
-#: models/models.py:95
+#: modeling/models.py:93
 msgid "Hospitalized"
 msgstr "Hospitalizirani"
 
-#: models/models.py:96
+#: modeling/models.py:94
 msgid "Hospitalized lower bound"
 msgstr "Hospitalizirani spodnja meja"
 
-#: models/models.py:97
+#: modeling/models.py:95
 msgid "Hospitalized upper bound"
 msgstr "Hospitalizirani zgornja meja"
 
-#: models/models.py:99
+#: modeling/models.py:97
 msgid "Deceased"
 msgstr "Umrli"
 
-#: models/models.py:100
+#: modeling/models.py:98
 msgid "Deceased lower bound"
 msgstr "Umrli spodnja meja"
 
-#: models/models.py:101
+#: modeling/models.py:99
 msgid "Deceased upper bound"
 msgstr "Umrli zgornja meja"
 
-#: models/models.py:103
+#: modeling/models.py:101
 msgid "DeceasedToDate"
 msgstr "Umrli skupaj"
 
-#: models/models.py:104
+#: modeling/models.py:102
 msgid "Deceased todate lower bound"
 msgstr "Umrli skupaj spodnja meja"
 
-#: models/models.py:105
+#: modeling/models.py:103
 msgid "Deceased todate upper bound"
 msgstr "Umrli skupaj zgornja meja"
 
-#: models/models.py:108 models/models.py:109
+#: modeling/models.py:106 modeling/models.py:107
 msgid "Prediction data"
 msgstr "Podatki napovedi"
 
@@ -256,10 +256,10 @@ msgstr "Slovensko"
 msgid "English"
 msgstr "Angleško"
 
-#: urls.py:13 urls.py:14
+#: urls.py:14 urls.py:15
 msgid "Sledilnik Administration"
 msgstr "Sledilnik administracija"
 
-#: urls.py:15
+#: urls.py:16
 msgid "Site administration"
 msgstr "Administracija strani"
