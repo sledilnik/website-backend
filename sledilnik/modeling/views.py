@@ -69,6 +69,7 @@ def models(request):
 class PredictionForm(forms.Form):
     date = forms.DateField(widget=forms.TextInput(attrs={"placeholder": "YYYY-MM-DD"}))
     model = forms.ModelChoiceField(queryset=Model.objects.filter(active=True))
+    password = forms.CharField(widget=forms.PasswordInput())
     scenario = forms.ChoiceField()
     interval_kind = forms.ChoiceField()
     data = forms.FileField()
@@ -80,6 +81,10 @@ class PredictionForm(forms.Form):
 
     def clean(self):
         data = super().clean()
+
+        if data.get("model") and data.get("password"):
+            if data.get("model").password != data.get("password"):
+                raise forms.ValidationError("Invalid credentials")
 
         if data.get("date") and not data.get("date").year >= 2020:
             self.add_error("scenario", "Invalid date year: {}.".data.get("date").year)
@@ -170,13 +175,13 @@ def predictions(request):
                 )
 
             return JsonResponse({
-                "Prediction": {
-                    "Id": prediction.id,
-                    "Status": "created" if created else "updated"
+                "prediction": {
+                    "id": prediction.id,
+                    "status": "created" if created else "updated"
                 }
             })
         else:
-            return JsonResponse(form.errors, status=400)
+            return JsonResponse({"error": form.errors}, status=400)
     else:
         form = PredictionForm()
 
