@@ -48,10 +48,10 @@
         },
         "django-modeltranslation": {
             "hashes": [
-                "sha256:6e351473ae66c382fe831249aaab1f8b725c7be3914e73036505f758db8e9c88"
+                "sha256:a14e67d40952a6e927fb743e6529e29ccfd33a80d8aaaa39036aaf994cfdaf7e"
             ],
             "index": "pypi",
-            "version": "==0.16.1"
+            "version": "==0.16.2"
         },
         "django-tastypie": {
             "hashes": [
