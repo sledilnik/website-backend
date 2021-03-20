@@ -33,10 +33,11 @@
         },
         "django-admin-sortable2": {
             "hashes": [
-                "sha256:65c8a02300e178b4a02c904b6f4dce6e528c58f5ecab3907dfba3540da51b862"
+                "sha256:b51a161b6dc69aedcba3c216df4aef58d54f389d0c4d2c720f59cf2d3f594c00",
+                "sha256:d523388976c9254f130375cb16c636369e89a5fd1db7a025253aeb497ce6018e"
             ],
             "index": "pypi",
-            "version": "==0.7.7"
+            "version": "==0.7.8"
         },
         "django-cors-headers": {
             "hashes": [
