@@ -1,5 +1,4 @@
 from tastypie.resources import ModelResource
-from tastypie.cache import SimpleCache
 
 from django.conf import settings
 from django.utils import translation
@@ -14,7 +13,6 @@ class RestrictionResource(ModelResource):
         queryset = Restriction.objects.all()
         fields = ["id", "title", "rule", "regions", "exceptions", "extra_rules",
                   "valid_since", "valid_until", "validity_comment", "comments", "legal_link", "order"]
-        cache = SimpleCache(timeout=60, public=True)
 
     def get_object_list(self, request):
         return super().get_object_list(request).filter(published=True).order_by("order")

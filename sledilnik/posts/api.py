@@ -1,7 +1,6 @@
 from django.utils import timezone
 
 from tastypie.resources import ModelResource
-from tastypie.cache import SimpleCache
 from sorl.thumbnail import get_thumbnail
 
 from django.conf import settings
@@ -16,7 +15,6 @@ class PostResource(ModelResource):
         queryset = Post.objects.all()
         fields = ["id", "created", "updated", "author", "title",
                   "image", "image_caption", "blurb", "link_to", "body"]
-        cache = SimpleCache(timeout=60, public=True)
 
     def get_object_list(self, request):
         kwargs = {
