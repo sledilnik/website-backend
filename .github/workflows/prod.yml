@@ -46,7 +46,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Deploy
-        uses: sledilnik/action-helm-deploy@master
+        uses: sledilnik/action-helm-deploy@v1.0.2
         with:
           chartName: sledilnik/django
           chartVersion: '1.0.1'
