@@ -14,9 +14,14 @@ class FaqResource(ModelResource):
         fields = ["position", "question", "answer"]
         cache = SimpleCache(timeout=60, public=True)
 
+    def dehydrate(self, bundle):
+        del(bundle.data["resource_uri"])
+
+        return bundle
+
 
 class FaqProjectResource(ModelResource):
-    faq = fields.ToManyField(FaqResource, "faqs", full=True)
+    faq = fields.ToManyField(FaqResource, "faqs", full=True, use_in="detail")
 
     class Meta:
         resource_name = "faq"
@@ -27,7 +32,6 @@ class FaqProjectResource(ModelResource):
 
     def dehydrate(self, bundle):
         lang = bundle.request.GET.get("lang")
-
         if lang not in [lng[0] for lng in settings.LANGUAGES]:
             lang = settings.LANGUAGE_CODE
         translation.activate(lang)
