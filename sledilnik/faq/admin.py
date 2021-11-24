@@ -15,5 +15,4 @@ class FaqInline(SortableInlineAdminMixin, TranslationStackedInline):
 
 @admin.register(models.Project)
 class ProjectAdmin(TranslationAdmin):
-    prepopulated_fields = {"slug": ["name"]}
     inlines = [FaqInline]
