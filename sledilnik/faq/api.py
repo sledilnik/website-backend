@@ -22,7 +22,7 @@ class FaqResource(ModelResource):
 class GlossaryTermResource(ModelResource):
     class Meta:
         queryset = GlossaryTerm.objects.all()
-        fields = ["position", "term", "definition"]
+        fields = ["position", "slug", "term", "definition"]
         cache = SimpleCache(timeout=60, public=True)
 
     def dehydrate(self, bundle):
