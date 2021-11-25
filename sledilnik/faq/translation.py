@@ -10,3 +10,8 @@ class ProjectTranslationOptions(TranslationOptions):
 @register(models.Faq)
 class FaqTranslationOptions(TranslationOptions):
     fields = ["question", "answer"]
+
+
+@register(models.GlossaryTerm)
+class GlossaryTermTranslationOptions(TranslationOptions):
+    fields = ["term", "definition"]

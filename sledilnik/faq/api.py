@@ -5,7 +5,7 @@ from tastypie.cache import SimpleCache
 from django.conf import settings
 from django.utils import translation
 
-from .models import Project, Faq
+from .models import Project, Faq, GlossaryTerm
 
 
 class FaqResource(ModelResource):
@@ -16,12 +16,23 @@ class FaqResource(ModelResource):
 
     def dehydrate(self, bundle):
         del(bundle.data["resource_uri"])
+        return bundle
 
+
+class GlossaryTermResource(ModelResource):
+    class Meta:
+        queryset = GlossaryTerm.objects.all()
+        fields = ["position", "term", "definition"]
+        cache = SimpleCache(timeout=60, public=True)
+
+    def dehydrate(self, bundle):
+        del(bundle.data["resource_uri"])
         return bundle
 
 
 class FaqProjectResource(ModelResource):
     faq = fields.ToManyField(FaqResource, "faqs", full=True, use_in="detail")
+    glossary = fields.ToManyField(GlossaryTermResource, "glossary", full=True, use_in="detail")
 
     class Meta:
         resource_name = "faq"
