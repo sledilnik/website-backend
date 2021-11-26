@@ -4,7 +4,7 @@ from . import models
 
 @register(models.Project)
 class ProjectTranslationOptions(TranslationOptions):
-    fields = []
+    fields = ["name"]
 
 
 @register(models.Faq)
