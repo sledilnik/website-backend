@@ -9,9 +9,11 @@ class ProjectTranslationOptions(TranslationOptions):
 
 @register(models.Faq)
 class FaqTranslationOptions(TranslationOptions):
-    fields = ["question", "answer"]
+    fields = ["slug", "question", "answer"]
+    empty_values = {"slug": None}
 
 
 @register(models.GlossaryTerm)
 class GlossaryTermTranslationOptions(TranslationOptions):
-    fields = ["term", "definition"]
+    fields = ["slug", "term", "definition"]
+    empty_values = {"slug": None}
