@@ -11,7 +11,7 @@ from .models import Project, Faq, GlossaryTerm
 class FaqResource(ModelResource):
     class Meta:
         queryset = Faq.objects.all()
-        fields = ["position", "question", "answer"]
+        fields = ["position", "slug", "question", "answer"]
         cache = SimpleCache(timeout=60, public=True)
 
     def dehydrate(self, bundle):

@@ -17,12 +17,15 @@ class Faq(models.Model):
     project = models.ForeignKey(Project, verbose_name=_("Project"), on_delete=models.CASCADE, related_name="faqs")
     position = models.PositiveIntegerField(_("Position"), default=0, null=False, blank=False)
 
+    # slug = models.SlugField(_("Slug"), max_length=100, help_text=_('Used to reference the question with a hash link, e.g. https://sledilnik.org/faq#slug'))
+    slug = models.SlugField(_("Slug"), max_length=100, help_text=_('Used to reference the question with a hash link, e.g. https://sledilnik.org/faq#slug'), null=True, blank=True)
     question = models.CharField(_("Question"), max_length=500)
     answer = MarkdownField(_("Answer"))
 
     class Meta:
         ordering = ["position"]
         constraints = [
+            # models.UniqueConstraint(fields=["project", "slug"], name="unique_slug_per_project"),
             models.UniqueConstraint(fields=["project", "question"], name="unique_question_per_project"),
         ]
 
